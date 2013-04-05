@@ -18,7 +18,7 @@ Add this to your **.zshrc/.bash_profile** and source it:
 
 	export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages
 
-	export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/opt/local/bin:/usr/l	ocal/sbin:/usr/local/share/python:$PATH
+	export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:/opt/local/bin:/usr/local/sbin:/usr/local/share/python:$PATH
 
 If you use **[oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)**, enable **Vagrant** completion in **.zshrc** and source it:
 

@@ -4,7 +4,7 @@
 
 ## Requirements
 
-Add the following in your `hosts` file (**use sudo**):
+Add the following in your `hosts` file **(use sudo)**:
 
 	10.10.10.10     search.logsmash.dev cluster.logsmash.dev bigdesk.logsmash.dev
 	10.10.10.31 	mozilla.logsmash.dev
@@ -14,7 +14,7 @@ Install **python**:
 
 	$> brew update ; brew install python
 	
-Add this to your **.zshrc**/**.bash_profile** and source it:
+Add this to your **.zshrc/.bash_profile** and source it:
 
 	export PYTHONPATH=$(brew --prefix)/lib/python2.7/site-packages
 
@@ -93,7 +93,7 @@ The repo ships with **7** VMs in the `Vagrantfile` preconfigured in `host_only` 
 - you **need** at least 1 node UP
 - ES listens on its private IP, in the IP range of `10.10.10.2x`
 	- so es1 is accessible on `10.10.10.21`
-	- es3 is accessible on `10.10.10.23` (**if the node is UP**)
+	- es3 is accessible on `10.10.10.23` **(if the node is UP)**
 
 ###### queue[1-3]
 
@@ -116,7 +116,7 @@ Vagrant cheat sheet:
 - `vagrant halt` : stop the VM. You rarely need this and usually go for `vagrant suspend`. See below.
 - `vagrant suspend` : suspend the VM.
 - `vagrant destroy [--force]` : nuke the VM, [running or not].
-- `vagrant provision` : re-**[provision](http://vagrantup.com/v1/docs/provisioners.html)** a VM (from `provision/*.sh`). Should not be needed.
+- `vagrant provision` : **re-[provision](http://vagrantup.com/v1/docs/provisioners.html)** a VM (from `provision/*.sh`). Should not be needed.
 
 Once your VMs are UP, use **fabric** to get the list of the tasks available:
 
@@ -243,7 +243,7 @@ You should be able to see your logs on Kibana (VM kibana_php), `search.logsmash.
 
 ## VAGRANT TRICKS
 
-Reload all the VMs in parallel (**needed** to change VM network conf) and print all the IPs:
+Reload all the VMs in parallel **(needed)** to change VM network conf) and print all the IPs:
 
 	vagrant status | sed 1,2d | grep running | tr -s ' ' | awk '{print $1}' | xargs -n 1 -P 10 vagrant reload && fab dev ips
 	
@@ -253,7 +253,7 @@ Shutdown all the VMs in parallel:
 	vagrant status | sed 1,2d | grep running | tr -s ' ' | awk '{print $1}' | xargs -n 1 -P 10 vagrant halt
 	
 
-Suspend all the VMs in parallel (**SSD recommended**):
+Suspend all the VMs in parallel **(SSD recommended)**:
 
 	vagrant status | sed 1,2d | grep running | tr -s ' ' | awk '{print $1}' | xargs -n 1 -P 10 vagrant suspend
 	

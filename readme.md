@@ -190,7 +190,7 @@ Make sure you have your **3** VMs (**kibana_php**, **es1** and **queue1**) start
 
 If not `vagrant up kibana_php es1 queue1` and `fab -P dev php q es`.
 
-From the main repo, download **[Logstash](https://logstash.objects.dreamhost.com/release/logstash-1.1.5-monolithic.jar)** to replicate a customer sending logs by passing a config file to it (located in `conf/logstash/`). All the demo config files ship the logs from your laptop by default to generate some traffic. For mozilla example:
+From the main repo, download **[Logstash](https://logstash.objects.dreamhost.com/release/logstash-1.1.5-monolithic.jar)** to replicate a host sending logs by passing a config file to it (located in `conf/logstash/`). All the demo config files ship the logs from your laptop by default to generate some traffic. For mozilla example:
 
 	$> sudo java -jar logstash-1.1.5-monolithic.jar agent -f conf/logstash/mozilla.conf
 	

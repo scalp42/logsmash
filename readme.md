@@ -100,7 +100,7 @@ The repo ships with **7** VMs in the `Vagrantfile` preconfigured in `host_only` 
 - those VMs contain the combo Nginx + Redis , in the IP range of `10.10.10.3x`
 	- Nginx is used for the subdomain `generic.logsmash.dev` or `mozilla.logsmash.dev` for ex
 	- Redis is used to store the logs waiting to be processed by **es[1-3]**
-- Redis store one list per company/subdomain
+- Redis store one list per host/subdomain
 - Redis is bound on 0.0.0.0
 
 ##### The first time you start a VM, it will take some time to provision it.

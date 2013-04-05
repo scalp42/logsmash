@@ -105,7 +105,7 @@ The repo ships with **7** VMs in the `Vagrantfile` preconfigured in `host_only` 
 
 ##### The first time you start a VM, it will take some time to provision it.
 
-##### Also, you only need `es1` to be UP for Rails.
+##### ~~Also, you only need `es1` to be UP for Rails.~~ (WIP, Rails app is not available)
 
 
 ## How to deploy

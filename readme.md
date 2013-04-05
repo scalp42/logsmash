@@ -59,7 +59,7 @@ Once Vagrant is installed, you need to download the ISO template for Ubuntu 12.0
 
 ## Infrastructure
 
-The repo ships with **7** VMs in the `Vagrantfile` preconfigured in `host_only` mode (**not** bridged on your LAN):
+The repo ships with **7** VMs in the `Vagrantfile` preconfigured in `host_only` mode (not bridged on your LAN):
 
 	$> vagrant status
 	Current VM states:

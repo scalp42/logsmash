@@ -90,7 +90,6 @@ def kibana_php():
         sudo('sed -i \'2s/worker_processes [0-9]*;/worker_processes 2;/\'')
         with settings(hide('everything')):
             for site in env.sites:
-                sudo('chown -R www-data:www-data /usr/local/share/%s' % site)
                 sudo('rm -f /etc/nginx/sites-enabled/%s' % site)
                 sudo('ln -s /etc/nginx/sites-available/%s /etc/nginx/sites-enabled/%s' % (site, site), warn_only=False)
                 require.directory('/usr/local/share/%s' % site, owner='www-data', group='www-data', use_sudo=True)
@@ -107,7 +106,7 @@ def kibana_php():
                         sudo('git pull -q origin php-deprecated')
                     else:
                         sudo('git pull -q origin master')
-            sudo('chown -R www-data:www-data /usr/local/share/%s' % site)
+            require.directory('/usr/local/share/%s' % site, owner='www-data', group='www-data', use_sudo=True)
     with settings(hide('everything'), warn_only=False):
         print(green('Starting nginx and php5-fpm services on %s if not running...' % host))
         require.service.started('nginx')

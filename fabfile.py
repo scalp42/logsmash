@@ -31,7 +31,7 @@ def dev():
         for vm in running:
             ssh_info = local('vagrant ssh-config %s' % vm, capture=True).splitlines()[1:]
             vagrant_info = dict([l.strip().split(' ', 1) for l in ssh_info if l.strip()])
-            env.key_filename = vagrant_info['IdentityFile']
+            env.key_filename = vagrant_info['IdentityFile'].strip('"')
             env.hosts.append('%(User)s@%(HostName)s:%(Port)s' % vagrant_info)
         else:
             print(red('Please start a VM with `vagrant up VM` first. Exiting.'))
